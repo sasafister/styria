@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-md-6 col-md-offset-3">
+
+	<div class="row">
+	  <!-- <div class="col-sm-6 col-md-3"> -->
+	    <div class="thumbnail">
+	      <img src="{{ obj.image}}">
+	      <div class="caption">
+	      	<h1 align="center">{{ obj.title }}</h1>
+
+	        <small>{{ obj.published }}</small>
+	        <p>{{ obj.author }}</p>
+	      </div>
+	    </div>
+	<!--   </div> -->
+	</div>
+
+</div>
+{% endblock %}

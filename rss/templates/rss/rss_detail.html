@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>{{ rss.title }}</h1>
+
+	{% for feed in rss_feed %}
+
+	<div class="row">
+	  <!-- <div class="col-sm-6 col-md-3"> -->
+	    <div class="thumbnail">
+	      <img src="{{ feed.image}}">
+	      <div class="caption">
+	        <h3>{{ feed.title }}</h3><small>{{ feed.published }}</small>
+	        {% if feed.author %}
+	        	<p>{{ feed.author }}</p>
+	       	{% else %}
+	       		<p>Autor nepoznat</p>
+	       	{% endif %}
+	        <p><a href="{% url 'entries_detail' feed.id %}" class="btn btn-primary" role="button">View</a> </p>
+	      </div>
+	    </div>
+	<!--   </div> -->
+	</div>
+	{% endfor %}
+	
+	
+
+
+{% endblock %}
